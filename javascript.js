@@ -32,3 +32,6 @@ function getHumanChoice() {
     }
 }
 
+// Creating and initializing human and computer score variables
+let humanScore = 0;
+let computerScore = 0;
