@@ -36,10 +36,9 @@ function getHumanChoice() {
 let humanScore = 0;
 let computerScore = 0;
 
-// Creation of play round function
-function playRound(humanChoice, computerChoice) {
-    // Criteria of human winning
-    // Increments humanScore variable
+// Creation of playGame function
+function playGame(humanChoice, computerChoice) {
+
     if (humanChoice === 'rock' && computerChoice === 'scissors') {
         console.log('You win! Rock beats Scissors!');
         humanScore ++;
@@ -68,6 +67,13 @@ function playRound(humanChoice, computerChoice) {
     } else {
         console.log('Sorry! Please try again.');
     }
+
+    // print the current scores
+    console.log(`The current score is: Human ${humanScore}, Computer ${computerScore}.`);
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+playGame(getHumanChoice(), getComputerChoice());
+playGame(getHumanChoice(), getComputerChoice());
+playGame(getHumanChoice(), getComputerChoice());
+playGame(getHumanChoice(), getComputerChoice());
+playGame(getHumanChoice(), getComputerChoice());
