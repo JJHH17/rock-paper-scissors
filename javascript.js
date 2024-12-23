@@ -16,3 +16,4 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+// Create getHumanChoice function 
