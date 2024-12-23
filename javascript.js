@@ -1,19 +1,18 @@
 // The player will play against the computer
-// Creation of computer variable
-let getComputerChoice = Math.floor(Math.random()*3);
 
-let computerChoice = '';
-
-// Updates the get a random choice between rock, paper or scissors 
-//let computerNumber = Math.floor(Math.random()*3);
-
-if (getComputerChoice == 0) {
-    computerChoice === 'Rock';
-} else if (getComputerChoice == 1) {
-    computerChoice === 'Paper'; 
-} else {
-    computerChoice === 'Scissors';
+// Creation of computer function, generates the computer choice
+function getComputerChoice() {
+    computerChoice = '';
+    computerNumber = Math.floor(Math.random() * 3 );
+    
+    // Applies logic to select the computer choice
+    if (computerNumber == 0) {
+        computerChoice += 'Rock';
+    } else if (computerNumber == 1) {
+        computerChoice += 'Paper'; 
+    } else if (computerNumber == 2) {
+        computerChoice += 'Scissors';
+    }
+    return computerChoice;
 }
 
-
-console.log(computerChoice);
