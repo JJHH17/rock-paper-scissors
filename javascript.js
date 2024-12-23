@@ -7,13 +7,28 @@ function getComputerChoice() {
     
     // Applies logic to select the computer choice
     if (computerNumber == 0) {
-        computerChoice += 'Rock';
+        computerChoice += 'rock';
     } else if (computerNumber == 1) {
-        computerChoice += 'Paper'; 
+        computerChoice += 'paper'; 
     } else if (computerNumber == 2) {
-        computerChoice += 'Scissors';
+        computerChoice += 'scissors';
     }
     return computerChoice;
 }
 
 // Create getHumanChoice function 
+function getHumanChoice() {
+    userChoice = prompt('Rock, Paper, or Scissors? ').toLowerCase();
+
+    // Ensure that the user enters a valid response
+    if (userChoice === 'rock') {
+        return userChoice;
+    } else if (userChoice === 'paper') {
+        return userChoice;
+    } else if (userChoice === 'scissors') {
+        return userChoice;
+    } else {
+        return 'You entered an invalid choice...';
+    }
+}
+
