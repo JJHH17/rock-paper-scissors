@@ -39,22 +39,31 @@ let computerScore = 0;
 // Creation of play round function
 function playRound(humanChoice, computerChoice) {
     // Criteria of human winning
+    // Increments humanScore variable
     if (humanChoice === 'rock' && computerChoice === 'scissors') {
         console.log('You win! Rock beats Scissors!');
+        humanScore ++;
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
         console.log('You win! Paper beats Rock!');
+        humanScore ++;
     } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
         console.log('You win! Scissors beats Paper!');
-    // DRAW criteria    
+        humanScore ++;
+    // DRAW criteria
+    // Does not change score
     } else if (humanChoice === computerChoice) {
         console.log('This was a draw!');
     // Criteria of computer winning
+    // Increments computerScore variable
     } else if (humanChoice === 'rock' && computerChoice === 'paper') {
         console.log('Sorry! You lose this round! Paper beats Rock.');
+        computerScore ++;
     } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
         console.log('Sorry! You lose this round! Scissors beats Paper.');
+        computerScore ++;
     } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
         console.log('Sorry! You lose this round! Rock beats Paper.');
+        computerScore ++;
     // Criteria of unsupported entry being made
     } else {
         console.log('Sorry! Please try again.');
