@@ -67,6 +67,7 @@ function playGame(humanChoice, computerChoice) {
     } else {
         console.log('Sorry! Please try again.');
     }
+    // TODO - Above can be refactored further, making use of OR comparison, reducing lines of code
 
     // print the current scores
     console.log(`The current score is: Human ${humanScore}, Computer ${computerScore}.`);
