@@ -72,9 +72,3 @@ function playGame(humanChoice, computerChoice) {
     // print the current scores
     console.log(`The current score is: Human ${humanScore}, Computer ${computerScore}.`);
 }
-
-playGame(getHumanChoice(), getComputerChoice());
-playGame(getHumanChoice(), getComputerChoice());
-playGame(getHumanChoice(), getComputerChoice());
-playGame(getHumanChoice(), getComputerChoice());
-playGame(getHumanChoice(), getComputerChoice());
