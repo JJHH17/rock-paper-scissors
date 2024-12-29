@@ -1,5 +1,21 @@
 // The player will play against the computer
 
+// Adding event listener for rock button click
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => {
+    playGame('rock', getComputerChoice());
+});
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => {
+    playGame('paper', getComputerChoice());
+});
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {
+    playGame('scissors', getComputerChoice());
+});
+
 // Creation of computer function, generates the computer choice
 function getComputerChoice() {
     computerChoice = '';
@@ -14,22 +30,6 @@ function getComputerChoice() {
         computerChoice += 'scissors';
     }
     return computerChoice;
-}
-
-// Create getHumanChoice function, allows the user to input a choice and is then returned
-function getHumanChoice() {
-    userChoice = prompt('Rock, Paper, or Scissors? ').toLowerCase();
-
-    // Ensure that the user enters a valid response
-    if (userChoice === 'rock') {
-        return userChoice;
-    } else if (userChoice === 'paper') {
-        return userChoice;
-    } else if (userChoice === 'scissors') {
-        return userChoice;
-    } else {
-        return 'You entered an invalid choice...'; // Done to handle the event of the user inputting unexpected value
-    }
 }
 
 // Creating and initializing human and computer score variables
@@ -72,19 +72,3 @@ function playGame(humanChoice, computerChoice) {
     // print the current scores
     console.log(`The current score is: Human ${humanScore}, Computer ${computerScore}.`);
 }
-
-// Adding event listener for rock button click
-const rock = document.querySelector("#rock");
-rock.addEventListener("click", () => {
-    alert('You selected Rock');
-});
-
-const paper = document.querySelector("#paper");
-paper.addEventListener("click", () => {
-    alert('You selected Paper');
-});
-
-const scissors = document.querySelector("#scissors");
-scissors.addEventListener("click", () => {
-    alert('You selected Scissors');
-});
