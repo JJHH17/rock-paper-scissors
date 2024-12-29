@@ -72,3 +72,19 @@ function playGame(humanChoice, computerChoice) {
     // print the current scores
     console.log(`The current score is: Human ${humanScore}, Computer ${computerScore}.`);
 }
+
+// Adding event listener for rock button click
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => {
+    alert('You selected Rock');
+});
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => {
+    alert('You selected Paper');
+});
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {
+    alert('You selected Scissors');
+});
