@@ -40,53 +40,60 @@ newDiv.id = 'resultDiv';
 let humanScore = 0;
 let computerScore = 0;
 
+// Create a div that we will use to track score 
+const scoreDiv = document.createElement('div');
+scoreDiv.id = "scoreDiv";
+
+
 // Creation of playGame function
 function playGame(humanChoice, computerChoice) {
 
     if (humanChoice === 'rock' && computerChoice === 'scissors') {
         newDiv.textContent = 'You win! Rock beats Scissors!';
-        document.body.appendChild(newDiv);
+        scoreTracker.insertBefore(newDiv, scoreDiv);
         humanScore ++;
 
     } else if (humanChoice === 'paper' && computerChoice === 'rock') {
         newDiv.textContent = 'You win! Paper beats Rock!';
-        document.body.appendChild(newDiv);
+        scoreTracker.insertBefore(newDiv, scoreDiv);
         humanScore ++;
 
     } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
         newDiv.textContent = 'You win! Scissors beats Paper!';
-        document.body.appendChild(newDiv);
+        scoreTracker.insertBefore(newDiv, scoreDiv);
         humanScore ++;
 
     // DRAW criteria
     // Does not change score
     } else if (humanChoice === computerChoice) {
         newDiv.textContent = 'This was a draw!';
-        document.body.appendChild(newDiv);
+        scoreTracker.insertBefore(newDiv, scoreDiv);
         //console.log('This was a draw!');
 
     // Criteria of computer winning
     // Increments computerScore variable
     } else if (humanChoice === 'rock' && computerChoice === 'paper') {
         newDiv.textContent = 'Sorry! You lose this round! Paper beats Rock.';
-        document.body.appendChild(newDiv);
+        scoreTracker.insertBefore(newDiv, scoreDiv);
         //console.log('Sorry! You lose this round! Paper beats Rock.');
         computerScore ++;
 
     } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
         newDiv.textContent = 'Sorry! You lose this round! Scissors beats Paper.';
-        document.body.appendChild(newDiv);
+        scoreTracker.insertBefore(newDiv, scoreDiv);
         //console.log('Sorry! You lose this round! Scissors beats Paper.');
         computerScore ++;
 
     } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
         newDiv.textContent = 'Sorry! You lose this round! Rock beats Paper.';
-        document.body.appendChild(newDiv);
+        scoreTracker.insertBefore(newDiv, scoreDiv);
         //console.log('Sorry! You lose this round! Rock beats Paper.');
         computerScore ++;
         
     }
-
-    // print the current scores
-    console.log(`The current score is: Human ${humanScore}, Computer ${computerScore}.`);
+    // appends the score via a div
+    scoreDiv.textContent = `The current score is: Human ${humanScore}, Computer ${computerScore}.`;
 }
+
+// Prints the final score via div 
+scoreTracker.appendChild(scoreDiv);
