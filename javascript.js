@@ -3,17 +3,17 @@
 // Adding event listener for rock button click
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
-    playGame('rock', getComputerChoice());
+    gameLogic('rock', getComputerChoice());
 });
 
 const paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
-    playGame('paper', getComputerChoice());
+    gameLogic('paper', getComputerChoice());
 });
 
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
-    playGame('scissors', getComputerChoice());
+    gameLogic('scissors', getComputerChoice());
 });
 
 // Creation of computer function, generates the computer choice
@@ -46,50 +46,25 @@ scoreDiv.id = "scoreDiv";
 
 
 // Creation of playGame function
-function playGame(humanChoice, computerChoice) {
+function gameLogic(humanChoice, computerChoice) {
 
-    if (humanChoice === 'rock' && computerChoice === 'scissors') {
-        newDiv.textContent = 'You win! Rock beats Scissors!';
-        scoreTracker.insertBefore(newDiv, scoreDiv);
-        humanScore ++;
-
-    } else if (humanChoice === 'paper' && computerChoice === 'rock') {
-        newDiv.textContent = 'You win! Paper beats Rock!';
-        scoreTracker.insertBefore(newDiv, scoreDiv);
-        humanScore ++;
-
-    } else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-        newDiv.textContent = 'You win! Scissors beats Paper!';
+    if (humanChoice === 'rock' && computerChoice === 'scissors' ||
+        humanChoice === 'paper' && computerChoice === 'rock' ||
+        humanChoice === 'scissors' && computerChoice === 'paper') {
+        newDiv.textContent = 'You win!';
         scoreTracker.insertBefore(newDiv, scoreDiv);
         humanScore ++;
 
     // DRAW criteria
-    // Does not change score
     } else if (humanChoice === computerChoice) {
         newDiv.textContent = 'This was a draw!';
         scoreTracker.insertBefore(newDiv, scoreDiv);
-        //console.log('This was a draw!');
 
     // Criteria of computer winning
-    // Increments computerScore variable
-    } else if (humanChoice === 'rock' && computerChoice === 'paper') {
-        newDiv.textContent = 'Sorry! You lose this round! Paper beats Rock.';
+    } else {
+        newDiv.textContent = 'Sorry! You lose this round!';
         scoreTracker.insertBefore(newDiv, scoreDiv);
-        //console.log('Sorry! You lose this round! Paper beats Rock.');
         computerScore ++;
-
-    } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
-        newDiv.textContent = 'Sorry! You lose this round! Scissors beats Paper.';
-        scoreTracker.insertBefore(newDiv, scoreDiv);
-        //console.log('Sorry! You lose this round! Scissors beats Paper.');
-        computerScore ++;
-
-    } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
-        newDiv.textContent = 'Sorry! You lose this round! Rock beats Paper.';
-        scoreTracker.insertBefore(newDiv, scoreDiv);
-        //console.log('Sorry! You lose this round! Rock beats Paper.');
-        computerScore ++;
-        
     }
     // appends the score via a div
     scoreDiv.textContent = `The current score is: Human ${humanScore}, Computer ${computerScore}.`;
@@ -97,3 +72,5 @@ function playGame(humanChoice, computerChoice) {
 
 // Prints the final score via div 
 scoreTracker.appendChild(scoreDiv);
+
+// Play game loop
