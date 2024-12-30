@@ -1,85 +1,140 @@
-// The player will play against the computer
+// // The player will play against the computer
 
-// Adding event listener for rock button click
+// Add click event listeners to rock, paper and scissors ui buttons
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
-    gameLogic('rock', getComputerChoice());
+    console.log('You clicked rock');
 });
 
 const paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
-    gameLogic('paper', getComputerChoice());
+    console.log('You clicked paper');
 });
 
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
-    gameLogic('scissors', getComputerChoice());
+    console.log('You clicked scissors');
 });
 
-// Creation of computer function, generates the computer choice
-function getComputerChoice() {
-    computerChoice = '';
-    computerNumber = Math.floor(Math.random() * 3 );
+// Add divs which will print the score to the page
+const scoresContainer = document.querySelector('#scoresContainer');
+const gameResult = document.createElement('div');
+gameResult.setAttribute('class', 'gameResult');
+const gameScores = document.createElement('div');
+gameScores.setAttribute('class', 'gameScores');
+// Appends the above to scoresContainer 
+scoresContainer.appendChild(gameResult);
+scoresContainer.appendChild(gameScores);
+// Could work on cleaning this up 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Adding event listener for rock button click
+// const rock = document.querySelector("#rock");
+// rock.addEventListener("click", () => {
+//     gameLogic('rock', getComputerChoice());
+// });
+
+// const paper = document.querySelector("#paper");
+// paper.addEventListener("click", () => {
+//     gameLogic('paper', getComputerChoice());
+// });
+
+// const scissors = document.querySelector("#scissors");
+// scissors.addEventListener("click", () => {
+//     gameLogic('scissors', getComputerChoice());
+// });
+
+// // Creation of computer function, generates the computer choice
+// function getComputerChoice() {
+//     computerChoice = '';
+//     computerNumber = Math.floor(Math.random() * 3 );
     
-    // Applies logic to select the computer choice, based on random number generated
-    if (computerNumber == 0) {
-        computerChoice += 'rock';
-    } else if (computerNumber == 1) {
-        computerChoice += 'paper'; 
-    } else if (computerNumber == 2) {
-        computerChoice += 'scissors';
-    }
-    return computerChoice;
-}
+//     // Applies logic to select the computer choice, based on random number generated
+//     if (computerNumber == 0) {
+//         computerChoice += 'rock';
+//     } else if (computerNumber == 1) {
+//         computerChoice += 'paper'; 
+//     } else if (computerNumber == 2) {
+//         computerChoice += 'scissors';
+//     }
+//     return computerChoice;
+// }
 
-// Create a new DIV which we will store the results of the game in once completed
-const newDiv = document.createElement('div');
-newDiv.id = 'resultDiv';
+// // Create a new DIV which we will store the results of the game in once completed
+// const newDiv = document.createElement('div');
+// newDiv.id = 'resultDiv';
 
-// Creating and initializing human and computer score variables
-let humanScore = 0;
-let computerScore = 0;
+// // Creating and initializing human and computer score variables
+// let humanScore = 0;
+// let computerScore = 0;
 
-// Create a div that we will use to track score 
-const scoreDiv = document.createElement('div');
-scoreDiv.id = "scoreDiv";
+// // Create a div that we will use to track score 
+// const scoreDiv = document.createElement('div');
+// scoreDiv.id = "scoreDiv";
 
 
-// Creation of playGame function
-function gameLogic(humanChoice, computerChoice) {
+// // Creation of playGame function
+// function gameLogic(humanChoice, computerChoice) {
 
-    if (humanChoice === 'rock' && computerChoice === 'scissors' ||
-        humanChoice === 'paper' && computerChoice === 'rock' ||
-        humanChoice === 'scissors' && computerChoice === 'paper') {
-        newDiv.textContent = 'You win!';
-        scoreTracker.insertBefore(newDiv, scoreDiv);
-        humanScore ++;
+//     if (humanChoice === 'rock' && computerChoice === 'scissors' ||
+//         humanChoice === 'paper' && computerChoice === 'rock' ||
+//         humanChoice === 'scissors' && computerChoice === 'paper') {
+//         newDiv.textContent = 'You win!';
+//         scoreTracker.insertBefore(newDiv, scoreDiv);
+//         humanScore ++;
 
-    // DRAW criteria
-    } else if (humanChoice === computerChoice) {
-        newDiv.textContent = 'This was a draw!';
-        scoreTracker.insertBefore(newDiv, scoreDiv);
+//     // DRAW criteria
+//     } else if (humanChoice === computerChoice) {
+//         newDiv.textContent = 'This was a draw!';
+//         scoreTracker.insertBefore(newDiv, scoreDiv);
 
-    // Criteria of computer winning
-    } else {
-        newDiv.textContent = 'Sorry! You lose this round!';
-        scoreTracker.insertBefore(newDiv, scoreDiv);
-        computerScore ++;
-    }
+//     // Criteria of computer winning
+//     } else {
+//         newDiv.textContent = 'Sorry! You lose this round!';
+//         scoreTracker.insertBefore(newDiv, scoreDiv);
+//         computerScore ++;
+//     }
     
-    // Displays final score once game completes
-    if (humanScore === 5) {
-        scoreDiv.textContent = `You win! Human ${humanScore}, Computer ${computerScore}.`;
-        humanChoice = 0;
-        computerChoice = 0;
-    } else if (computerScore === 5) {
-        scoreDiv.textContent = `Computer Wins! Computer ${computerScore}, Human ${humanScore}.`;
-        humanChoice = 0;
-        computerChoice = 0;
-    }
+//     // Displays final score once game completes
+//     if (humanScore === 5) {
+//         scoreDiv.textContent = `You win! Human ${humanScore}, Computer ${computerScore}.`;
+//         humanChoice = 0;
+//         computerChoice = 0;
+//     } else if (computerScore === 5) {
+//         scoreDiv.textContent = `Computer Wins! Computer ${computerScore}, Human ${humanScore}.`;
+//         humanChoice = 0;
+//         computerChoice = 0;
+//     }
     
-}
+// }
 
-// Prints the final score via div 
-scoreTracker.appendChild(scoreDiv);
+// // Prints the final score via div 
+// scoreTracker.appendChild(scoreDiv);
 
