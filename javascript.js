@@ -28,8 +28,20 @@ scoresContainer.appendChild(gameScores);
 // Could work on cleaning this up 
 
 
-
-
+// Computer Choice logic, selects an option based on random number
+function getComputerChoice() {
+    computerChoice = '';
+    computerNumber = Math.floor(Math.random() * 3 );
+    
+    if (computerNumber == 0) {
+        computerChoice += 'rock';
+    } else if (computerNumber == 1) {
+        computerChoice += 'paper'; 
+    } else if (computerNumber == 2) {
+        computerChoice += 'scissors';
+    }
+    return computerChoice;
+}
 
 
 
