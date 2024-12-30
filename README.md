@@ -10,3 +10,4 @@
 - Used libraries such as Math to generate random choices
 - Used prompt() to allow for interactivity
 - Used incrementation to track scores of the game
+- Used DOM manipulation to add a dynamic UI.
