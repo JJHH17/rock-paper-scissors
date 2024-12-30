@@ -1,20 +1,9 @@
 // // The player will play against the computer
 
-// Add click event listeners to rock, paper and scissors ui buttons
-const rock = document.querySelector("#rock");
-rock.addEventListener("click", () => {
-    console.log('You clicked rock');
-});
+// Creation of variables that will hold the scoring of the game
+let humanScore = 0;
+let computerScore = 0;
 
-const paper = document.querySelector("#paper");
-paper.addEventListener("click", () => {
-    console.log('You clicked paper');
-});
-
-const scissors = document.querySelector("#scissors");
-scissors.addEventListener("click", () => {
-    console.log('You clicked scissors');
-});
 
 // Add divs which will print the score to the page
 const scoresContainer = document.querySelector('#scoresContainer');
@@ -44,9 +33,37 @@ function getComputerChoice() {
 }
 
 
+// Game logic function 
+function gameLogic(humanChoice, computerChoice) {
+    if (humanChoice === 'rock' && computerChoice === 'scissors' ||
+        humanChoice === 'paper' && computerChoice === 'rock' ||
+        humanChoice === 'scissors' && computerChoice === 'paper') {
+            console.log('You win!');
+    } else if (humanChoice === computerChoice) {
+        console.log('It was a draw!');
+    } else {
+        console.log('The computer won!');
+    }
+}
 
+// Add click event listeners to rock, paper and scissors ui buttons
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => {
+    // to be tied with game function
+    gameLogic('rock', getComputerChoice());
+});
 
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => {
+    // to be tied with game logic
+    gameLogic('paper', getComputerChoice());
+});
 
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {
+    // to be tied with game logic 
+    gameLogic('scissors', getComputerChoice());
+});
 
 
 
