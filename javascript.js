@@ -66,11 +66,20 @@ function gameLogic(humanChoice, computerChoice) {
         scoreTracker.insertBefore(newDiv, scoreDiv);
         computerScore ++;
     }
-    // appends the score via a div
-    scoreDiv.textContent = `The current score is: Human ${humanScore}, Computer ${computerScore}.`;
+    
+    // Displays final score once game completes
+    if (humanScore === 5) {
+        scoreDiv.textContent = `You win! Human ${humanScore}, Computer ${computerScore}.`;
+        humanChoice = 0;
+        computerChoice = 0;
+    } else if (computerScore === 5) {
+        scoreDiv.textContent = `Computer Wins! Computer ${computerScore}, Human ${humanScore}.`;
+        humanChoice = 0;
+        computerChoice = 0;
+    }
+    
 }
 
 // Prints the final score via div 
 scoreTracker.appendChild(scoreDiv);
 
-// Play game loop
