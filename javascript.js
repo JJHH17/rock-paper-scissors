@@ -14,7 +14,6 @@ gameScores.setAttribute('class', 'gameScores');
 // Appends the above to scoresContainer 
 scoresContainer.appendChild(gameResult);
 scoresContainer.appendChild(gameScores);
-// Could work on cleaning this up 
 
 
 // Computer Choice logic, selects an option based on random number
