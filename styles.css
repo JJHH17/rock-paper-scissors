@@ -5,3 +5,9 @@
     margin-top: 50px;
 }
 
+#scoresContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
